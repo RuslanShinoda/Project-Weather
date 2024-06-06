@@ -1,0 +1,276 @@
+:root {
+  /* Primary Colors */
+  --primary-bg-color: #f6f6f6;
+  /* Заголовки */
+  --primary-text-color: #009595;
+  /* Білий колір для тексту заголовків і кнопок */
+
+  /* Secondary Colors */
+  --secondary-bg-color: #d7d7d7;
+  /* Світло-сірий колір для фону контенту */
+  --secondary-text-color: #333333;
+  /* Темно-сірий колір для тексту контенту */
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: large;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Merriweather Sans', sans-serif;
+  color: var(--primary-text-color) !important;
+}
+
+header {
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+main {
+  padding: 50px 0;
+  background-color: var(--secondary-bg-color);
+}
+
+.titles {
+  color: var(--primary-text-color);
+}
+
+.weatherInfoContainers {
+  margin: 20px auto;
+  padding: 40px;
+  max-width: 90%;
+  background-color: var(--primary-bg-color);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+}
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 12em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+}
+
+.search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: var(--primary-text-color);
+}
+
+.search__input:focus+.search__button {
+  background-color: #f0eeee;
+}
+
+.search__button {
+  border: none;
+  background-color: #f4f2f2;
+  margin-top: .1em;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search__icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: #b4b4b4;
+}
+
+#searchCityInput:focus {
+  box-shadow: 0 0 0 0.25rem var(--primary-text-color) !important;
+}
+
+#searchCityContainer {
+  position: relative;
+  height: fit-content;
+}
+
+#searchCityContainer i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#errorNotifyContainer {
+  position: absolute;
+  top: 80px;
+  display: none;
+  background-color: rgba(255, 51, 51, 0.9);
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+50% {
+  opacity: 0.5;
+}
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+#selectionForecastPeriod {
+  padding: 0px 5%;
+  width: 90%;
+  background-color: #404040;
+  display: flex;
+  gap: 20px;
+}
+
+#selectionForecastPeriod>div {
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: larger;
+  color: var(--primary-text-color);
+  cursor: pointer;
+}
+
+#selectionForecastPeriod>div:hover {
+  background-color: var(--secondary-bg-color);
+}
+
+.selectionForecastPeriodUserFocus {
+  background-color: var(--secondary-bg-color);
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+.selectionForecastPeriodUserFocus:hover,
+#selectionForecastPeriod>div:hover {
+  box-shadow: 0 0 10px var(--primary-text-color);
+}
+
+#weatherTitle {
+  padding: 40px;
+}
+
+#currentWeatherTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+#currentWeatherInfoContainer {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--secondary-text-color);
+}
+
+#currentWeatherInfoContainer>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.tableHourlyWeatherInfo {
+  width: 100%;
+}
+
+.tableHourlyWeatherInfo table {
+  width: 100%;
+  border-spacing: 0px 20px;
+}
+
+.tableHourlyWeatherInfo tr:nth-last-child(-n+3) td {
+  border-top: 1px solid var(--primary-text-color);
+}
+
+.tableHourlyWeatherInfo th,
+td {
+  text-align: start;
+  padding: 6px 12px;
+}
+
+.tableHourlyWeatherInfo tr:nth-child(n+3) td:nth-child(1) {
+  color: var(--secondary-text-color);
+}
+
+#nearbyPlacesWeatherInfoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#nearbyPlacesWeatherInfoContainer>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: var(--secondary-bg-color);
+}
+
+#nearbyPlacesWeatherInfoContainer>div>div {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+#currentWeatherInfoWeatherTemperature {
+  font-size: 48px;
+}
+
+.weatherIcons {
+  max-width: 80px;
+}
+
+#chooseWeatherDayContainer {
+  background-color: var(--secondary-bg-color);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+#chooseWeatherDayContainer>div {
+  background-color: var(--primary-bg-color);
+  opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chooseWeatherDayContainerUserFocus {
+  opacity: 1;
+}

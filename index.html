@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather</title>
+  <link rel="icon" type="image/x-icon" href="./assets/logo/weatherLogoIcon.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script type="module" src="./services/countryNameService.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="titles">MY WEATHER</h1>
+    <div class="search">
+      <input type="text" class="search__input" id="searchCityInput">
+      <button class="search__button">
+        <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+            <path
+              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z">
+            </path>
+          </g>
+        </svg>
+      </button>
+
+      <div id="errorNotifyContainer">
+asdasdas
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="selectionForecastPeriod">
+      <div>Today</div>
+      <div>5-day</div>
+    </div>
+
+    <div class="weatherInfoContainers" id="currentWeatherContainer">
+      <div id="currentWeatherTitle">
+        <h4 class="weatherTitle">CURRENT WEATHER</h4>
+        <h4 class="weatherTitle" id="currentDate"></h4>
+      </div>
+
+      <div id="currentWeatherInfoContainer">
+        <div>
+          <div id="currentWeatherInfoIcon">
+          </div>
+
+          <div id="currentWeatherInfoWeatherDescription">
+          </div>
+        </div>
+
+        <div>
+          <div id="currentWeatherInfoWeatherTemperature">
+          </div>
+
+          <div id="currentWeatherInfoFeelsLikeTemperature">
+          </div>
+        </div>
+        <div id="currentWeatherInfoSunTime">
+        </div>
+      </div>
+    </div>
+
+    <div class="weatherInfoContainers" id="chooseWeatherDayContainer">
+
+    </div>
+
+    <div class="weatherInfoContainers" id="fiveDayForecastContainer">
+      <div id="fiveDayForecastTitle">
+        <h4 class="weatherTitle">HOURLY</h4>
+      </div>
+
+      <div id="fiveDayForecastInfoContainer" class="tableHourlyWeatherInfo"></div>
+    </div>
+
+    <div class="weatherInfoContainers" id="hourlyWeatherContainer">
+      <div id="hourlyWeatherTitle">
+        <h4 class="weatherTitle">HOURLY</h4>
+      </div>
+
+      <div id="hourlyWeatherInfoContainer" class="tableHourlyWeatherInfo">
+      </div>
+    </div>
+
+    <div class="weatherInfoContainers" id="nearbyPlacesWeatherContainer">
+      <div id="nearbyPlacesWeatherTitle">
+        <h4 class="weatherTitle">NEARBY PLACES</h4>
+      </div>
+
+      <div id="nearbyPlacesWeatherInfoContainer"></div>
+    </div>
+  </main>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+  </style>
+  <script src="assets/js/script.js" type="module"></script>
+</body>
+
+</html>
